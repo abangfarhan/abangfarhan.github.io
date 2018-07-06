@@ -10,6 +10,7 @@ github_username:  abangfarhan
 markdown: kramdown
 plugins:
   - jekyll-feed
+  - jekyll-paginate
 exclude:
   - Gemfile
   - Gemfile.lock
@@ -24,3 +25,5 @@ kramdown:
   syntax_highlighter_opts:
     block:
       line_numbers: true
+
+paginate: 10

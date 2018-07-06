@@ -1,0 +1,30 @@
+---
+layout: default
+---
+
+<div class="col-lg-8 offset-lg-2 post-list">
+  {% for post in paginator.posts %}
+    <div class="post-detail">
+      <a href="{{ post.url | relative_url }}">
+        <h3 class="row post-title">{{ post.title }}</h3>
+        {% comment %} <p class="row post-subtitle">{{ post.subtitle }}</p> {% endcomment %}
+        <p class="row post-meta">Posted on {{ post.date | date: "%b %-d, %Y" }}</p>
+      </a>
+      <hr class="row">
+    </div>
+  {% endfor %}
+
+  <div class="pager">
+    {% if paginator.previous_page %}
+      <a class="previous" href="{{ paginator.previous_page_path }}">Newer Posts</a>
+    {% else %}
+      <span class="previous">Newer Posts</span>
+    {% endif %}
+
+    {% if paginator.next_page %}
+      <a class="next" href="{{ paginator.next_page_path }}">Older Posts</a>
+    {% else %}
+      <span class="next">Older Posts</span>
+    {% endif %}
+  </div>
+</div>

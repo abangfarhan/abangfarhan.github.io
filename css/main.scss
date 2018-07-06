@@ -107,6 +107,15 @@ div.highlight {
 //   overflow-x: auto;
 }
 
+.pager {
+  .next {
+    float: right;
+  }
+
+  .previous {
+    float: left;
+  }
+}
 /*
  * Getting syntax highlighting:
  * Download one of the css file on https://github.com/richleland/pygments-css
