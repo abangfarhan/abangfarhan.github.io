@@ -98,9 +98,7 @@ div.highlight {
     -ms-user-select: none;
     user-select: none;
     
-    .lineno {
-      opacity: 0.5;
-    }
+    .lineno { opacity: 0.5; }
   }
 
 //   /* enable horizontal scroll */
@@ -108,14 +106,22 @@ div.highlight {
 }
 
 .pager {
-  .next {
-    float: right;
-  }
+  /*
+   * Without overflow: hidden the floating
+   * will mess up the layout
+   */
+  overflow: hidden;
 
-  .previous {
-    float: left;
-  }
+  .next { float: right; }
+  .previous { float: left; }
 }
+
+footer {
+  text-align: center;
+  padding-top: $spacer;
+  padding-bottom: $spacer;
+}
+
 /*
  * Getting syntax highlighting:
  * Download one of the css file on https://github.com/richleland/pygments-css

@@ -16,15 +16,15 @@ layout: default
 
   <div class="pager">
     {% if paginator.previous_page %}
-      <a class="previous" href="{{ paginator.previous_page_path }}">Newer Posts</a>
+      <a class="previous" href="{{ paginator.previous_page_path }}">&larr; Newer Posts</a>
     {% else %}
-      <span class="previous">Newer Posts</span>
+      <span class="previous">&larr; Newer Posts</span>
     {% endif %}
 
     {% if paginator.next_page %}
-      <a class="next" href="{{ paginator.next_page_path }}">Older Posts</a>
+      <a class="next" href="{{ paginator.next_page_path }}">Older Posts &rarr;</a>
     {% else %}
-      <span class="next">Older Posts</span>
+      <span class="next">Older Posts &rarr;</span>
     {% endif %}
   </div>
 </div>
