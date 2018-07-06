@@ -1,0 +1,26 @@
+title: Abang Farhan's Blog
+email: abangfarhan31@gmail.com
+description: Personal blog of Abang Farhan.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+twitter_username: ""
+github_username:  abangfarhan
+
+# Build settings
+markdown: kramdown
+plugins:
+  - jekyll-feed
+exclude:
+  - Gemfile
+  - Gemfile.lock
+
+permalink: pretty
+
+sass:
+  style: :compressed
+
+kramdown:
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    block:
+      line_numbers: true

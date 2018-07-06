@@ -1,0 +1,118 @@
+---
+---
+
+$spacer: 1rem;
+$gray-500: #adb5bd;
+$navbar-padding-y: ($spacer);
+$dark: black;
+$body-bg: white;
+
+@import url("https://fonts.googleapis.com/css?family=Raleway");
+$font-family-sans-serif:      -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
+$font-family-base: $font-family-sans-serif;
+$font-size-base: 0.9rem;
+$navbar-brand-font-size: $font-size-base * 1.5;
+$post-line-height: 1.7 * $spacer;
+
+$font-family-monospace: SFMono-Regular, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+$font-family-title: "Raleway", $font-family-base;
+
+body {
+  overflow-y: scroll;
+}
+
+.container {
+  padding-top: $spacer;
+}
+
+.post-meta {
+  color: $gray-500;
+  font-family: $font-family-monospace;
+}
+.post-detail {
+  a {
+    color: black;
+  }
+  a:hover {
+    text-decoration: none;
+  }
+}
+
+.post {
+  .post-detail {
+    padding-top: $spacer;
+    padding-bottom: $spacer;
+    text-align: center;
+    h1 {
+      font-size: $font-size-base * 2;
+    }
+  }
+  .content {
+    h1, h2, h3, h4, h5, h6 {
+      padding-top: $spacer;
+    }
+    p {
+      font-size: $font-size-base * 1.1;
+      line-height: $post-line-height;
+      text-align: justify;
+    }
+    li {
+      line-height: $post-line-height;
+    }
+    img {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 100%;
+    }
+    blockquote {
+      // TODO
+    }
+    // horizontal scrolling on math block
+    .MJXc-display {
+      overflow-x: auto;
+      overflow-y: hidden;
+    }
+  }
+}
+
+.post-title {
+  font-family: $font-family-title;
+}
+
+.navbar {
+  font-family: $font-family-title;
+}
+
+div.highlight {
+  padding-top: ($spacer/2);
+
+  td.rouge-gutter {
+    padding-right: ($spacer/2);
+    padding-left: ($spacer/2);
+    // disable selection on line number
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    
+    .lineno {
+      opacity: 0.5;
+    }
+  }
+
+//   /* enable horizontal scroll */
+//   overflow-x: auto;
+}
+
+/*
+ * Getting syntax highlighting:
+ * Download one of the css file on https://github.com/richleland/pygments-css
+ * Rename it to _syntax-highlighting.scss
+ * Move it to _sass/
+ */
+@import "syntax-highlighting";
+
+@import "bootstrap/bootstrap";
