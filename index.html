@@ -18,13 +18,13 @@ layout: default
     {% if paginator.previous_page %}
       <a class="previous" href="{{ paginator.previous_page_path }}">&larr; Newer Posts</a>
     {% else %}
-      <span class="previous">&larr; Newer Posts</span>
+      <span class="previous text-muted">&larr; Newer Posts</span>
     {% endif %}
 
     {% if paginator.next_page %}
       <a class="next" href="{{ paginator.next_page_path }}">Older Posts &rarr;</a>
     {% else %}
-      <span class="next">Older Posts &rarr;</span>
+      <span class="next text-muted">Older Posts &rarr;</span>
     {% endif %}
   </div>
 </div>
