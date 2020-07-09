@@ -4,6 +4,7 @@ layout: default
 
 <div class="col-lg-8 offset-lg-2 post-list">
   {% for post in paginator.posts %}
+  {% if post.hidden != true %}
     <div class="post-detail">
       <a href="{{ post.url | relative_url }}">
         <h3 class="row post-title">{{ post.title }}</h3>
@@ -12,6 +13,7 @@ layout: default
       </a>
       <hr class="row">
     </div>
+    {% endif %}
   {% endfor %}
 
   <div class="pager">

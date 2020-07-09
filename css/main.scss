@@ -51,11 +51,8 @@ body {
     h1, h2, h3, h4, h5, h6 {
       padding-top: $spacer;
     }
-    p {
+    p, li {
       font-size: $font-size-base * 1.1;
-      line-height: $post-line-height;
-    }
-    li {
       line-height: $post-line-height;
     }
     img {
