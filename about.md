@@ -5,7 +5,11 @@ title: About
 
 # About me
 
-I am a financial management student that likes to make programs. Check out my github page [here](github.com/abangfarhan). You can find my contact information on the [Contact]({{ site.baseurl }}/contact) page.
+I earned my Bachelor of Economy (Sarjana Ekonomi) from the Faculty of Economics
+and Business in Universitas Indonesia in 2021. Now I am currently employed as an
+Investment Analyst at BNI Asset Management. Check out my github page
+[here](https://github.com/abangfarhan), and you can find my contact information on
+the [Contact](/contact) page.
 
 # About this blog
 
