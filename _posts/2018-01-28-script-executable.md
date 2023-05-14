@@ -5,7 +5,7 @@ subtitle  : Little trick that made my life easier.
 date      : 2018-01-28 07:38
 published : true
 author    : abangfarhan
-category  : programming
+category  : blog
 tags      : [programming, windows, batch]
 ---
 

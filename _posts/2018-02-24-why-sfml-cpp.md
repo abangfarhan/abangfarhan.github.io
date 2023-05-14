@@ -5,7 +5,7 @@ subtitle  : Something I learned in the past couple of months.
 date      : 2018-02-24 18:08
 published : true
 author    : abangfarhan
-category  : programming
+category  : blog
 tags      : [programming, cpp, SFML]
 ---
 

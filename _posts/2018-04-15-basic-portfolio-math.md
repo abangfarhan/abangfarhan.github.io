@@ -5,7 +5,7 @@ subtitle  : Just some notes about portfolio theory.
 date      : 2018-04-15 15:30
 published : false
 author    : abangfarhan
-category  : finance
+category  : blog
 tags      : [math, finance]
 ---
 

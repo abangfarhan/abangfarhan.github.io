@@ -4,7 +4,7 @@ title     : Derivative of Cross Entropy Loss with Softmax Activation
 subtitle  : It's not so complex after all
 date      : 2017-08-28 19:51
 published : true
-category  : machine-learning
+category  : blog
 author    : abangfarhan
 tags      : [machine learning, neural network, math]
 ---
@@ -38,8 +38,8 @@ $$
 \text{softmax}(\mathbf{x}) =
   \frac{\text{exp}(\mathbf{x})}
   {\sum_j \text{exp}(x_j)}.
-\end{equation}
 \label{eq:softmax}
+\end{equation}
 $$
 
 Next, we will examine the cross entropy loss function. First, keep in mind that the variable $  \mathbf{y}  $ is a one-hot encoded vector, where $  y_i=1  $ if the actual class is $  i  $, and 0 otherwise. The loss function is
@@ -49,21 +49,21 @@ $$
 L(\mathbf{p}) = - \log p_i
   \text{ where }
   y_i = 1.
-\end{equation}
 \label{eq:loss}
+\end{equation}
 $$
 
 Note that the $ \log $ here is the same as natural logarithm, which is the logarithm with base $ e $, which some people refer to using the $ \ln $ notation.
 
-To understand why Equation \eqref{eq:loss} make sense, let's walk through a simple example. Suppose that $ y_2 = 1 $. In other words, the input belong to class 2.  Now, to calculate the loss we only need to look at $ p_2 $.  If $ p_2 $ is equal to a number close to 1, say 90%, then our model is working correctly, since it gives a high probability that the input belongs to the class 2.  If we check with the formula, with $ p_2 = 90\% $, then the loss would be equal to $ -\log(0.9) \approx 0.10$. Let's check what would happen if our model assign a small probability, say $ p_2 = 10\% $. In this case, the loss would be equal to $ -\log(0.1) \approx 2.3$. As you can see, now the number is much higher than before, which means that the loss function penalizes the output $p_2$ for giving a low probability.
+To understand why Equation $ \eqref{eq:loss} $ make sense, let's walk through a simple example. Suppose that $ y_2 = 1 $. In other words, the input belong to class 2.  Now, to calculate the loss we only need to look at $ p_2 $.  If $ p_2 $ is equal to a number close to 1, say 90%, then our model is working correctly, since it gives a high probability that the input belongs to the class 2.  If we check with the formula, with $ p_2 = 90\% $, then the loss would be equal to $ -\log(0.9) \approx 0.10$. Let's check what would happen if our model assign a small probability, say $ p_2 = 10\% $. In this case, the loss would be equal to $ -\log(0.1) \approx 2.3$. As you can see, now the number is much higher than before, which means that the loss function penalizes the output $p_2$ for giving a low probability.
 
 We can also define the loss function as
 
 $$
 \begin{equation}
 L(\mathbf{p}) = - \sum_i y_i \log p_i.
-\end{equation}
 \label{eq:loss_sum}
+\end{equation}
 $$
 
 Why can we do that? Because we know that only one $ y_i $ is equal to one, and the rest is zero, and so we know that $ y_i \log p_i $ is equal to zero when $ y_i $ is zero.
@@ -102,6 +102,7 @@ $$
 \label{eq:scalar-to-vector}
 \end{align}
 $$
+
 On Equation \eqref{eq:scalar-to-vector} we can see that the derivative of $L$ w.r.t. to $\mathbf{x}$ is a vector of length $n$ and the $i$th element of that vector is equal to the derivative of $L$ w.r.t. $x_i$. Knowing that piece of information, now we can attack the problem more easily, since we only have to analyze the derivative of a scalar w.r.t. a scalar. So, our problem now is to find the result of
 
 $$
@@ -156,6 +157,7 @@ $$
 \label{eq:L-to-pj-verbose}
 \end{align}
 $$
+
 Now, it is easy to see that most of term inside the bracket on Equation \eqref{eq:L-to-pj-verbose} will be mostly zero. The reason is that anytime the top term (e.g. $y_1 \log p_1$) is absolutely not affected by the bottom term (e.g. $p_2$), the result of the derivative will be zero. For example,
 
 $$

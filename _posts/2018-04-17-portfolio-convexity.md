@@ -5,7 +5,7 @@ subtitle  : Just some math notes about portfolio.
 date      : 2018-04-17 12:18
 published : true
 author    : abangfarhan
-category  : finance
+category  : blog
 tags      : [math, finance]
 ---
 
@@ -18,7 +18,7 @@ $\newcommand{\corr}[1]{\rho _ {#1}}$
 
 When creating a portfolio of two stocks, the resulting standard deviations and expected returns for varying weights for each stock will result in a graph like this:
 
-![portfolio curve]({{site.baseurl}}/img/2018-04-17-portfolio-convexity/00.png)
+![portfolio curve](/img/2018-04-17-portfolio-convexity/00.png)
 
 As you can see, the curve is convex to the y-axis. But why is this? Can we mathematically prove that this will always be the case?
 
@@ -37,7 +37,7 @@ $$
 
 To answer the questions, we need to adjust our graph a bit. You see, the graph above has standard deviation as the x-axis, and expected return as the y-axis, because that is how it is usually shown. As you will see later, it is much easier to adjust the graph so the x-axis is the expected return, like this:
 
-![portfolio curve modified]({{site.baseurl}}/img/2018-04-17-portfolio-convexity/01.png)
+![portfolio curve modified](/img/2018-04-17-portfolio-convexity/01.png)
 
 As you can immediately see, the curve appears to be quadratic. That's what we are trying to do here: prove that the equation creating that curve is quadratic.  But, what is the equation? So far we haven't seen any function that will generate the $\sigma_p$ based on the $R_p$. That's why first we need to find that function.
 

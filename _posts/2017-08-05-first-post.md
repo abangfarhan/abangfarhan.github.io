@@ -5,7 +5,7 @@ subtitle  : The First Post on This Blog
 date      : 2017-08-05 18:28
 published : false
 author    : abangfarhan
-category  : others
+category  : blog
 tags      : [others]
 ---
 

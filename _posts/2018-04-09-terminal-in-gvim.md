@@ -5,7 +5,7 @@ subtitle  : Why nobody told me about this before?
 date      : 2018-04-09 17:15
 published : true
 author    : abangfarhan
-category  : programming
+category  : blog
 tags      : [programming, vim, text editor]
 ---
 
