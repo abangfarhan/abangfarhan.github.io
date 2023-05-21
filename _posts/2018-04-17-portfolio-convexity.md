@@ -3,7 +3,6 @@ layout    : post
 title     : Proving the Convexity of the Portfolio Curve
 subtitle  : Just some math notes about portfolio.
 date      : 2018-04-17 12:18
-published : true
 author    : abangfarhan
 category  : blog
 tags      : [math, finance]

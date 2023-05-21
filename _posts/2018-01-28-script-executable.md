@@ -3,7 +3,6 @@ layout    : post
 title     : Making Scripts of Any Language a Global Executable on Windows
 subtitle  : Little trick that made my life easier.
 date      : 2018-01-28 07:38
-published : true
 author    : abangfarhan
 category  : blog
 tags      : [programming, windows, batch]

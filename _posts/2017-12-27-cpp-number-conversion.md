@@ -3,7 +3,6 @@ layout    : post
 title     : Weird C++ Number Conversion
 subtitle  : At least it's weird for me...
 date      : 2017-12-27 08:55
-published : true
 author    : abangfarhan
 category  : blog
 tags      : [cpp, C++, programming]

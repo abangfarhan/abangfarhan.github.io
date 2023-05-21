@@ -3,7 +3,6 @@ layout    : post
 title     : Derivative of Cross Entropy Loss with Softmax Activation
 subtitle  : It's not so complex after all
 date      : 2017-08-28 19:51
-published : true
 category  : blog
 author    : abangfarhan
 tags      : [machine learning, neural network, math]

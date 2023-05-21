@@ -3,7 +3,6 @@ layout    : post
 title     : 10 Print on Windows Command Line
 subtitle  : Creating the classic random maze on cmd
 date      : 2017-12-29 11:17
-published : true
 author    : abangfarhan
 category  : blog
 tags      : [programming, windows, art]
