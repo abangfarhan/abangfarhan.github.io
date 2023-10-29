@@ -1,0 +1,59 @@
+html {
+    color-scheme: light dark;
+}
+
+body {
+    font-family: system-ui;
+    line-height: 1.5;
+}
+
+img, svg, video {
+    max-width: 100%;
+    display: block;
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+main {
+    max-width: 800px;
+    margin: auto;
+}
+
+.post-detail {
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: #0090e6;
+}
+
+ul.navbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.navbar > li {
+    float: left;
+}
+
+.navbar > li a {
+    display: block;
+    text-align: center;
+    padding: 10px 10px;
+    text-decoration: none;
+    color: black;
+}
+
+/* Dark mode: white text color */
+@media (prefers-color-scheme: dark) {
+    a {
+        color: #878cff;
+    }
+    .navbar > li a {
+        color: white;
+    }
+}

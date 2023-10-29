@@ -2,31 +2,18 @@
 layout: default
 ---
 
-<div class="col-lg-8 offset-lg-2 post-list">
-  {% for post in paginator.posts %}
-  {% if post.hidden != true %}
-    <div class="post-detail">
-      <a href="{{ post.url | relative_url }}">
-        <h3 class="row post-title">{{ post.title }}</h3>
-        {% comment %} <p class="row post-subtitle">{{ post.subtitle }}</p> {% endcomment %}
-        <p class="row post-meta">Posted on {{ post.date | date: "%b %-d, %Y" }}</p>
-      </a>
-      <hr class="row">
-    </div>
-    {% endif %}
-  {% endfor %}
+<h1>{{ site.title }}</h1>
 
-  <div class="pager">
-    {% if paginator.previous_page %}
-      <a class="previous" href="{{ paginator.previous_page_path }}">&larr; Newer Posts</a>
-    {% else %}
-      <span class="previous text-muted">&larr; Newer Posts</span>
-    {% endif %}
+<h2>Posts</h2>
 
-    {% if paginator.next_page %}
-      <a class="next" href="{{ paginator.next_page_path }}">Older Posts &rarr;</a>
-    {% else %}
-      <span class="next text-muted">Older Posts &rarr;</span>
+<ul>
+{% for post in site.posts %}
+    {% if post.hidden != true %}
+        <li><span style="font-family: Consolas">{{ post.date | date: "%Y %b %d" }} &mdash;</span>
+            <a href="{{ post.url | relative_url }}">
+                {{ post.title }}
+            </a>
+        </li>
     {% endif %}
-  </div>
-</div>
+{% endfor %}
+</ul>
