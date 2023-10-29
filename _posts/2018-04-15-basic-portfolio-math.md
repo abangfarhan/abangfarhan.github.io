@@ -13,13 +13,13 @@ some notes about it because I found the mathematics to be quite easy to
 understand. However, since this is just a blog post and I am quite lazy, for now
 I won't include any references.
 
-# What is a Portfolio?
+## What is a Portfolio?
 
 In this post, when I talked about portfolio, I am referring to portfolio of
 stocks. Furthermore, the portfolio would only consists of two stocks (i.e. stock
 from two different corporations) because it is simple.
 
-# The Basics
+## The Basics
 
 Suppose that we are interested in creating a portfolio of that consisted of two
 stocks: Stock A and Stock B. We need to know some information about those
@@ -68,7 +68,7 @@ E(R_i) &= \text{expected return of Stock } i \\
 \end{align}
 $$
 
-# Why Invest in a Portfolio?
+## Why Invest in a Portfolio?
 
 Why do we want to invest in a portfolio of stocks, not just a stock? After all,
 we can just invest in the stock with the highest expected return, right? Wrong.
@@ -79,7 +79,7 @@ $\corr{AB} = -1$, then we can be sure that when Stock A's performed badly (i.e.
 the price decrease), the loss would be countered by return from the Stock B
 (i.e. the Stock B's price will increase).
 
-# What do We Want to Do?
+## What do We Want to Do?
 
 The main objective in portfolio management is determining the **weight** of each
 stock in the portfolio, here denoted $W_A$ and $W_B$ for Stock A and Stock B,
@@ -88,7 +88,7 @@ stock. For example, if $W_A = 0.4$ and $W_B = 0.6$, and we have decided to
 invest $\\$1000$ to the portfolio, then we will use $0.4 \times \\$1000 = \\$400$
 to invest in Stock A, and $0.6 \times \\$1000 = \\$600$ to invest in Stock B.
 
-# Properties of a Portfolio
+## Properties of a Portfolio
 
 Like stocks, portfolio also has expected return and standard deviation, which is
 determined by the expected return, standard deviation, and weight of the stocks
@@ -117,12 +117,12 @@ $\sigma_B=0.10$, $\corr{AB}=-0.45$).
 As you can see, the plot is convex to the y-axis. I think this can be
 mathematically proven, but I have not done that yet. Maybe another time.
 
-# Building the Portfolio
+## Building the Portfolio
 
 There are various ways to calculate the weight for the portfolio. We will talk
 about them in this section.
 
-## Minimum Variance Portfolio
+### Minimum Variance Portfolio
 
 If we want to minimize the risk of our portfolio, then we might want to create a
 portfolio that have the possible minimum variance. To do that, we determine the
@@ -140,6 +140,6 @@ is on the portfolio curve.
 
 ![portfolio curve with MVP]({{site.baseurl}}/img/2018-04-15-basic-portfolio-math/01.png)
 
-## Optimal Portfolio
+### Optimal Portfolio
 
 Now I will introduce you to the concept of risk aversion.

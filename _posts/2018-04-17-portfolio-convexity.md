@@ -11,7 +11,7 @@ $\newcommand{\cov}[1]{\text{COV} _ {#1}}$
 $\newcommand{\corr}[1]{\rho _ {#1}}$
 </div>
 
-# Introduction
+## Introduction
 
 When creating a portfolio of two stocks, the resulting standard deviations and expected returns for varying weights for each stock will result in a graph like this:
 
@@ -19,7 +19,7 @@ When creating a portfolio of two stocks, the resulting standard deviations and e
 
 As you can see, the curve is convex to the y-axis. But why is this? Can we mathematically prove that this will always be the case?
 
-# Notations
+## Notations
 
 The portfolio consists of two stocks: Stock A and Stock B. The expected returns and standard deviations for each of them are denoted as $R_A$, $R_B$, $\sigma_A$, and $\sigma_B$, respectively. The weights for each stock are denoted as $W_A$ and $W_B$, where $W_A + W_B = 1$, so $W_B = 1 - W_A$. The expected return and variance of the portfolio is
 
@@ -30,7 +30,7 @@ R_p &= W_A R_A + W_B R_B \\
 \end{align}
 $$
 
-# Proving the Convexity
+## Proving the Convexity
 
 To answer the questions, we need to adjust our graph a bit. You see, the graph above has standard deviation as the x-axis, and expected return as the y-axis, because that is how it is usually shown. As you will see later, it is much easier to adjust the graph so the x-axis is the expected return, like this:
 

@@ -6,7 +6,7 @@ category: blog
 tags: [programming, windows, art]
 ---
 
-# What is 10 Print?
+## What is 10 Print?
 
 For those who don't know about 10 Print, it is the name of a one line command that you can type on a [Commodore 64](https://en.wikipedia.org/wiki/Commodore_64).  The command is
 
@@ -20,11 +20,11 @@ That command, if executed in the Commodore 64, will produce this image:
 
 As you can see, the command basically tell the computer to print out the `/` (forward slash) or `\` (backward slash) character randomly.
 
-# Adapting 10 Print to Windows Command Prompt
+## Adapting 10 Print to Windows Command Prompt
 
 There are two ways to execute the 10 Print command on Windows cmd, either using a batch script or by directly executing on the command line. The advantage of using the batch script is that the commands can be more easily understood, while the advantage of executing the command directly on cmd is that you can type it in a single line and that is probably cooler.
 
-## 10 Print on Batch Script
+### 10 Print on Batch Script
 
 Below is the 10 Print script.
 
@@ -45,7 +45,7 @@ Next, you can just execute the script by tying `10print.bat` on the cmd and type
 
 Cool, isn't it? Although it does not really look like a maze. To stop the program you only need to type Ctrl+C.
 
-### Script Explanation
+#### Script Explanation
 
 Now I will go on to explain each line in the script.
 
@@ -62,7 +62,7 @@ Now I will go on to explain each line in the script.
    6. `echo|set /p=\`: print out a backward slash without a newline.
    7. `goto loop`: this command will tell the cmd to start the executing commands from the label `loop` that we have created. Essentially this will create an infinite loop.
 
-## 10 Print on Command Line
+### 10 Print on Command Line
 
 Now we are going to create the same effect but only on one line. These are the steps:
 
@@ -80,7 +80,7 @@ Now we are going to create the same effect but only on one line. These are the s
 
 5. Finished! To stop the program press Ctrl+C. To make the cmd appear like before, just type in `echo on` and press enter.
 
-### Explanation
+#### Explanation
 
 Firstly, why do we need to type in `cmd /v` first? We do that to create a new instance of cmd with "delayed local expansion." Without doing this, the random number generated will be the same at every iteration! Try this yourself. Try to follow the steps above but ignoring the second step. The result will either be `////` or `\\\\\`.
 

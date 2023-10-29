@@ -8,17 +8,17 @@ tags: [programming, cpp, SFML]
 
 Hi guys, in this post I am going to talk about SFML, or Simple and Fast Multimedia Library, and how it helped me learn more about the C++ programming language. But, first of all, what is SFML?
 
-# What is SFML?
+## What is SFML?
 
 [SFML](https://www.sfml-dev.org/) is a library that you can use to make graphics. I think SFML can be categorized as a high-level library, since the API (i.e. the functions, classes, etc.) of the library is very simple yet capable of doing things that usually require you to write many lines of codes (especially in C++). Although I use SFML with C++, actually it has other bindings to other languages, such as C, Java, Python, and more. 
 
 Did I said that it was a graphics library? Well, that's not entirely true, because it is much more than that. The official website said that SFML is "a simple interface to the various components of your PC, to ease the development of games and multimedia applications." Accordingly, it has five modules that can easily speed up the development process: system, window, graphics, audio, and network. But for now I only primarily use the graphics library.
 
-# How do I get it?
+## How do I get it?
 
 To get the SFML, you can get the latest stable version from [here](https://www.sfml-dev.org/download/sfml/2.4.2/). For now you should find out by yourself how to get it working, e.g. by googling or reading the docs. The download page provides many versions depending on your compiler, such as Visual C++11, GCC, and so on. In the future I will write a post to help you make the library from source, since it is very easy and very important to be learned by beginners. For now, you can check out this [Youtube video](https://www.youtube.com/watch?v=UM93glM0Fhs) (this is how I first learned about building library from source and including it in my program).
 
-# Why should I use it?
+## Why should I use it?
 
 There are several reasons why you should use this library, especially if you are a beginner in C++. First, it is easy to use. Second, you can use this library to visualize stuffs. Third, you may learn important things that are important to learn C++.
 
@@ -44,7 +44,7 @@ The third reason to use SFML is that you may learn other important things. For m
 2. **Using Makefile**: because the program is separated on various scripts, it will be tedious and fragile if I compile the program manually from the command prompt. Luckily, I can use the [make program](https://www.gnu.org/software/make/). If you install GCC using MinGW or TDM-GCC, the make program is called `mingw32-make`. Previously, I thought Makefile was really hard to use. It turns out that it is pretty simple and easy to use (at least for my current purposes, which is also very simple).
 3. **Debugging program using GDB**: [GDB](https://www.gnu.org/software/gdb/) is usually come preinstalled when you installed MinGW GCC. Previously, when my program went wrong I will sprinkle `std::cout` around to find the problem. Needless to say, that is not the most efficient way to debug any program. With GDB, you can run your program and stop it anytime you want. You can also inspect any variable that you have created in your program. SFML supports debugging, so it is possible to run your graphics program, which requires an infinite loop to display the window continuously, while still capable to debug your program step by step using GDB.
 
-# What have I created using SFML?
+## What have I created using SFML?
 
 As of the time of this writing I have created three Github repositories that used SFML library:
 

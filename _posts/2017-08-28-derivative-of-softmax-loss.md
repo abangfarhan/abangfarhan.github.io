@@ -10,7 +10,7 @@ tags: [machine learning, neural network, math]
 
 In this post I will atempt to explain the derivative of the cross entropy loss function, the input of which is activated using the softmax function. This post is intended to give me as well as the reader a better understanding of derivatives. Please point out any mathematical errors or any ambiguity in this post. If you have any question please feel free to ask.
 
-# Introduction
+## Introduction
 
 One popular activation function that is often used for neural network is the softmax function. This function is usually used at the output layer, because it could squash a vector of numbers into a number between 0 and 1, and if those numbers are summed up the result is 1, in other words
 
@@ -69,9 +69,9 @@ Why can we do that? Because we know that only one $ y_i $ is equal to one, and t
 
 But, why do we want to do this? The purpose is to make it easier to analyze the derivative. You see, with the loss function defined on Equation \eqref{eq:loss_sum}, it is now free from "conditional" such as "where ..." that was used on Equation \eqref{eq:loss}.
 
-# Finding the Derivative
+## Finding the Derivative
 
-## What We Are Going to Do
+### What We Are Going to Do
 
 What we are going to do in this post is, given the loss function $ L(\mathbf{p})  ​$ defined using the cross entropy function on Equation \eqref{eq:loss} and \eqref{eq:loss_sum}, where $ \mathbf{p} = \text{softmax}(\mathbf{x})  ​$, then we are going to try to understand the derivative of the loss function with respect to (w.r.t.) the vector $\mathbf{x}​$, or
 
@@ -83,7 +83,7 @@ $$
 
 For the sake of brevity, I am going to regard $L(\mathbf{p})$ and $ L $ as the same thing.
 
-## Breaking Down the Problem
+### Breaking Down the Problem
 
 As you may have noticed, our goal is to find the derivative of a *scalar* $L$ w.r.t. a *vector* $\mathbf{x}$. The result will be a vector defined as
 
@@ -130,7 +130,7 @@ $$
 
 Observe that every term in the summation is just a multiplication between two derivatives of a scalar w.r.t. to a scalar (first the derivative $L​$ w.r.t. $p_j​$, next the derivative of $p_j​$ w.r.t. $x_i​$). Now, we can attack our problem even more easily.
 
-## Derivative of $L$ w.r.t. $p_j$
+### Derivative of $L$ w.r.t. $p_j$
 
 In this section, we are going to examine
 
@@ -234,7 +234,7 @@ $$
 \end{equation}
 $$
 
-## Derivative of $p_j$ w.r.t. $x_i$
+### Derivative of $p_j$ w.r.t. $x_i$
 
 Let's break down the problem
 
@@ -264,7 +264,7 @@ $$
 
 Here I use $e_j'$ to denote derivative of $e_j$ w.r.t. $x_i$, and likewise the $\sum'$. Immediately we see that there are two possible answers to this problem. For example, $\partial e_j/\partial x_i$ will be equal to zero when $i \neq j$, and nonzero otherwise. So, we will divide this problem into two.
 
-### When $j = i$
+#### When $j = i$
 
 Here we will examine $\partial p_j/\partial x_i$ when $j=i$. For simplicity we are going to denote it as $\partial p_i / \partial x_i$. To use the notation on Equation \eqref{eq:pj-xi}, our problem here is
 
@@ -316,7 +316,7 @@ $$
 
 Look at that! The result is very simple.
 
-###  When $j \neq i$
+####  When $j \neq i$
 
 Here we will examine $\partial p_j/\partial x_i$ when $j \neq i$. Our problem here is
 
@@ -368,7 +368,7 @@ $$
 
 Voila! The result here is also very simple!
 
-## Multiplying the Derivatives
+### Multiplying the Derivatives
 
 Going back to our main problem now. Previously on Equation \eqref{eq:L-xi} we know that we want to solve
 
@@ -380,7 +380,7 @@ $$
 
 When the summation above is unraveled, either $j=i$ or not. Just like before, we are going to divide this section into two parts: when $j=i$ and when $j \neq i$.
 
-### When $j = i$
+#### When $j = i$
 
 Now we will consider when $j=i$. For simplicity, I am going to denote $p_j$ as $p_i$. So the problem here is
 
@@ -401,7 +401,7 @@ $$
 \end{align}
 $$
 
-### When $j \neq i$
+#### When $j \neq i$
 
 Taking the results from Equation \eqref{eq:L-pj} and \eqref{eq:pi-xj}, we found that
 
@@ -413,7 +413,7 @@ $$
 \end{align}
 $$
 
-### Summing the Derivatives
+#### Summing the Derivatives
 
 Now we know the results of the derivatives inside the summation on Equation \eqref{eq:L-xi}, we can finally sum them up to get the final result.
 
