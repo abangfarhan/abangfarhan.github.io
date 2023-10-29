@@ -6,6 +6,7 @@ date      : 2017-08-05 18:28
 published : false
 author    : abangfarhan
 category  : blog
+math: true
 tags      : [others]
 ---
 

@@ -2,6 +2,7 @@
   <p class="text-muted">Copyright &copy; {{ site.title }} {{ site.time | date: '%Y' }}</p>
 </footer>
 
+{% if page.math %}
 <!--Enable automatic numbering. See http://docs.mathjax.org/en/latest/tex.html#automatic-equation-numbering-->
 <script>
 MathJax = {
@@ -13,6 +14,7 @@ MathJax = {
 </script>
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+{% endif %}
 
 {% comment %}
 vim: set ft=liquid:

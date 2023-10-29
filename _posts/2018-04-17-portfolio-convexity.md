@@ -5,6 +5,7 @@ subtitle  : Just some math notes about portfolio.
 date      : 2018-04-17 12:18
 author    : abangfarhan
 category  : blog
+math: true
 tags      : [math, finance]
 ---
 

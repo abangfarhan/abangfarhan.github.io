@@ -6,6 +6,7 @@ date      : 2018-04-15 15:30
 published : false
 author    : abangfarhan
 category  : blog
+math: true
 tags      : [math, finance]
 ---
 

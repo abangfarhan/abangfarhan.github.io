@@ -5,6 +5,7 @@ subtitle  : It's not so complex after all
 date      : 2017-08-28 19:51
 category  : blog
 author    : abangfarhan
+math: true
 tags      : [machine learning, neural network, math]
 ---
 
