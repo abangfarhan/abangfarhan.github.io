@@ -71,7 +71,11 @@ td.rouge-gutter {
 }
 .rouge-gutter > .lineno { opacity: 0.4;}
 code.highlighter-rouge {
-  font-size: 90%;
+  font-size: 95%;
   color: #e83e8c;
   word-break: break-word
+}
+pre {
+    /* horizontal scroll */
+    overflow-x: auto;
 }
