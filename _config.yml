@@ -4,7 +4,7 @@ description: Personal blog of Abang Farhan.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: ""
-github_username:  abangfarhan
+github_username: abangfarhan
 
 # Build settings
 markdown: kramdown
