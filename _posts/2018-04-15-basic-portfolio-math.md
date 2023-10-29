@@ -1,13 +1,11 @@
 ---
-layout    : post
-title     : Basic Portfolio Theory
-subtitle  : Just some notes about portfolio theory.
-date      : 2018-04-15 15:30
-published : false
-author    : abangfarhan
-category  : blog
+layout: post
+title: Basic Portfolio Theory
+subtitle: Just some notes about portfolio theory.
+published: false
+category: blog
 math: true
-tags      : [math, finance]
+tags: [math, finance]
 ---
 
 A few months ago I learned about portfolio theory, and in this post I will write

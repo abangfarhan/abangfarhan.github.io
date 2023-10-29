@@ -1,11 +1,9 @@
 ---
-layout    : post
-title     : C/C++ Programming with Curses on Windows
-subtitle  : How to develop C/C++ programs with curses, on Windows!
-date      : 2018-01-27 07:38
-author    : abangfarhan
-category  : blog
-tags      : [programming, windows, c, cpp]
+layout: post
+title: C/C++ Programming with Curses on Windows
+subtitle: How to develop C/C++ programs with curses, on Windows!
+category: blog
+tags: [programming, windows, c, cpp]
 ---
 
 [Curses](https://en.wikipedia.org/wiki/Curses_(programming_library)) is cool. It enables us to make cool command-line applications. Consider this demo program:

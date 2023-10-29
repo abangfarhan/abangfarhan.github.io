@@ -1,11 +1,9 @@
 ---
-layout    : post
-title     : Why you should use the SFML library to learn C++
-subtitle  : Something I learned in the past couple of months.
-date      : 2018-02-24 18:08
-author    : abangfarhan
-category  : blog
-tags      : [programming, cpp, SFML]
+layout: post
+title: Why you should use the SFML library to learn C++
+subtitle: Something I learned in the past couple of months.
+category: blog
+tags: [programming, cpp, SFML]
 ---
 
 Hi guys, in this post I am going to talk about SFML, or Simple and Fast Multimedia Library, and how it helped me learn more about the C++ programming language. But, first of all, what is SFML?

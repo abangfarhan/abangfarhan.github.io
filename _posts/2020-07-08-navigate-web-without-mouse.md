@@ -1,11 +1,8 @@
 ---
-layout    : post
-title     : Navigating the Web without a Mouse
-subtitle  : Navigating the Web without a Mouse
-date      : 2020-07-08 17:47
-author    : abangfarhan
-category  : blog
-tags      : [others]
+layout: post
+title: Navigating the Web without a Mouse
+category: blog
+tags: [others]
 ---
 
 # Introduction

@@ -1,11 +1,9 @@
 ---
-layout    : post
-title     : 10 Print on Windows Command Line
-subtitle  : Creating the classic random maze on cmd
-date      : 2017-12-29 11:17
-author    : abangfarhan
-category  : blog
-tags      : [programming, windows, art]
+layout: post
+title: 10 Print on Windows Command Line
+subtitle: Creating the classic random maze on cmd
+category: blog
+tags: [programming, windows, art]
 ---
 
 # What is 10 Print?

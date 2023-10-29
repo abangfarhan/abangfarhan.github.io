@@ -1,12 +1,11 @@
 ---
-layout    : post
-title     : Derivative of Cross Entropy Loss with Softmax Activation
-subtitle  : It's not so complex after all
-date      : 2017-08-28 19:51
-category  : blog
-author    : abangfarhan
+layout: post
+title: Derivative of Cross Entropy Loss with Softmax Activation
+subtitle: It's not so complex after all
+category: blog
+author: abangfarhan
 math: true
-tags      : [machine learning, neural network, math]
+tags: [machine learning, neural network, math]
 ---
 
 In this post I will atempt to explain the derivative of the cross entropy loss function, the input of which is activated using the softmax function. This post is intended to give me as well as the reader a better understanding of derivatives. Please point out any mathematical errors or any ambiguity in this post. If you have any question please feel free to ask.

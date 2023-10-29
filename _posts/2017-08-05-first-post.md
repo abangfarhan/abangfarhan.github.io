@@ -1,13 +1,11 @@
 ---
-layout    : post
-title     : Hello World
-subtitle  : The First Post on This Blog
-date      : 2017-08-05 18:28
-published : false
-author    : abangfarhan
-category  : blog
+layout: post
+title: Hello World
+subtitle: The First Post on This Blog
+published: false
+category: blog
 math: true
-tags      : [others]
+tags: [others]
 ---
 
 This is the first `post` on this blog.

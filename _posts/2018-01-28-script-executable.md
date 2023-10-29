@@ -1,11 +1,9 @@
 ---
-layout    : post
-title     : Making Scripts of Any Language a Global Executable on Windows
-subtitle  : Little trick that made my life easier.
-date      : 2018-01-28 07:38
-author    : abangfarhan
-category  : blog
-tags      : [programming, windows, batch]
+layout: post
+title: Making Scripts of Any Language a Global Executable on Windows
+subtitle: Little trick that made my life easier.
+category: blog
+tags: [programming, windows, batch]
 ---
 
 On a \*nix environment, if you have a script created using any programming language, and you want to make that script an executable on Windows, you only need to put a shebang line on top of the script. For example, on a Python script you would need to put something like this:

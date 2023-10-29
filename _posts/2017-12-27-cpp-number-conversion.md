@@ -1,11 +1,10 @@
 ---
-layout    : post
-title     : Weird C++ Number Conversion
-subtitle  : At least it's weird for me...
-date      : 2017-12-27 08:55
-author    : abangfarhan
-category  : blog
-tags      : [cpp, C++, programming]
+layout: post
+title: Weird C++ Number Conversion
+subtitle: At least it's weird for me...
+author: abangfarhan
+category: blog
+tags: [cpp, C++, programming]
 ---
 
 While learning the C++ programming language, I found out that there are three ways to convert number types. For instance, suppose you want to convert an `int` to a `float`, then you can do either of the followings:
