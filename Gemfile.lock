@@ -65,6 +65,7 @@ GEM
     tzinfo-data (1.2023.3)
       tzinfo (>= 1.0.0)
     unicode-display_width (2.4.2)
+    wdm (0.1.1)
     webrick (1.8.1)
 
 PLATFORMS
@@ -77,6 +78,7 @@ DEPENDENCIES
   kramdown (>= 2.3.0)
   kramdown-parser-gfm
   tzinfo-data
+  wdm (>= 0.1.0)
 
 RUBY VERSION
    ruby 3.2.2p53
