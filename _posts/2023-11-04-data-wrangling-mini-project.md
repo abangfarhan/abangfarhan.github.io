@@ -206,18 +206,18 @@ df2[df2['user_phone']=='08xx336019xxx']
 
 The output would be:
 
-|user_phone      |Question  |Choices|
+|user_phone|Question|Choices|
 |-|-|-|
-|08xx336019xxx   |1         |[B]|
-|08xx336019xxx   |2         |[A]|
-|08xx336019xxx   |3         |[A]|
-|08xx336019xxx   |4         |[A]|
-|08xx336019xxx   |5         |[A]|
-|08xx336019xxx   |6         |[B]|
-|08xx336019xxx   |7         |[A]|
-|08xx336019xxx   |8         |[C]|
-|08xx336019xxx   |9         |[A]|
-|08xx336019xxx  |10         |[A]|
+|08xx336019xxx|1|[B]|
+|08xx336019xxx|2|[A]|
+|08xx336019xxx|3|[A]|
+|08xx336019xxx|4|[A]|
+|08xx336019xxx|5|[A]|
+|08xx336019xxx|6|[B]|
+|08xx336019xxx|7|[A]|
+|08xx336019xxx|8|[C]|
+|08xx336019xxx|9|[A]|
+|08xx336019xxx|10|[A]|
 
 To prepare for the next step, I will create three new columns: "A", "B", and "C". These columns will contain boolean values, indicating if the respondent chose the option as stated in the column name. We do it with the following method:
 
