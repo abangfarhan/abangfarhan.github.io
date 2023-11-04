@@ -6,10 +6,16 @@ title: About
 ## About me
 
 I earned my Bachelor of Economy (Sarjana Ekonomi) from the Faculty of Economics
-and Business in Universitas Indonesia in 2021. Now I am currently employed as an
-Investment Analyst at BNI Asset Management. Check out my github page
-[here](https://github.com/abangfarhan), and you can find my contact information on
-the [Contact](/contact) page.
+and Business in Universitas Indonesia in 2021, majoring in financial
+management. Now, I am currently employed as an Investment Analyst at BNI Asset
+Management.
+
+My links:
+
+- [GitHub](https://github.com/abangfarhan)
+- [LinkedIn](https://www.linkedin.com/in/abang-farhan-54b510261/)
+
+You can find my contact information on the [Contact](/contact) page.
 
 ## About this blog
 
