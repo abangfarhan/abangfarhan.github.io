@@ -5,6 +5,7 @@
 body {
     font-family: system-ui;
     line-height: 1.5;
+    color: #1f2328;
 }
 
 img, svg, video {
@@ -25,8 +26,8 @@ main {
 }
 
 a {
-    text-decoration: none;
-    color: #0090e6;
+    text-decoration: underline;
+    color: #0969da;
 }
 
 ul.navbar {
@@ -46,6 +47,10 @@ ul.navbar {
     padding: 10px 10px;
     text-decoration: none;
     color: black;
+}
+
+.navbar > li:hover {
+    text-decoration: underline;
 }
 
 /* Dark mode: white text color */
