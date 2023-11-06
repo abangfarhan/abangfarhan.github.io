@@ -130,3 +130,7 @@ pre {
     overflow-x: auto;
 }
 
+.long-math {
+    max-width: 100%;
+    overflow: auto;
+}
