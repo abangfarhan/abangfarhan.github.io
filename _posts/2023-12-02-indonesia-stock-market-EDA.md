@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Exploratory Data Analysis: Indonesia’s Stock Market"
+title: "Exploratory Data Analysis: Indonesia’s Stock Market Characteristics and Trends"
 category: blog
 math: true
 tags: [finance, data visualizations]
