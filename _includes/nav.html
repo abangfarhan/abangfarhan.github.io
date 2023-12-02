@@ -1,5 +1,5 @@
 <ul class="navbar">
-    <li><a style="padding-left: 0px;" href="{{ site.baseurl }}/">Home</a></li>
+    <li><b><a style="padding-left: 0px;" href="{{ site.baseurl }}/">{{ site.title }}</a></b></li>
     {% for page in site.pages %}
         {% if page.title %}
             <li><a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a></li>
