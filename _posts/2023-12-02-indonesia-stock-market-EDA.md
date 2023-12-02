@@ -14,7 +14,7 @@ tags: [finance, data visualizations]
 
 ## Background
 
-Gaining a better understanding about a stock market is important for anyone looking to invest in it. While there are so many aspects to explore in this field, one particularly interesting topic is the behavior of the stock market's investors, especially regarding their investment size and sectoral allocations. Here in Indonesia, the stock market is a place where [trillions of rupiah are traded every day](https://money.kompas.com/read/2021/09/14/202000326/bei-targetkan-rata-rata-transaksi-harian-mencapai-rp-13-5-triliun-pada-2022) (on average) by various parties--including retail investors, asset management companies, and so on--and facilitated by [Indonesia Stock Exchange](https://www.idx.co.id), stock brokers, and other [supporting institutions](https://www.ojk.go.id/id/kanal/pasar-modal/Pages/Lembaga-dan-Profesi-Penunjang.aspx).
+Gaining a better understanding about a stock market is important for anyone looking to invest in it. While there are so many aspects to explore in this field, one particularly interesting topic is the behavior of the stock market investors, especially regarding their investment size and sectoral allocations. Here in Indonesia, the stock market is a place where [trillions of rupiah are traded every day](https://money.kompas.com/read/2021/09/14/202000326/bei-targetkan-rata-rata-transaksi-harian-mencapai-rp-13-5-triliun-pada-2022) (on average) by various parties--including retail investors, asset management companies, and so on--and facilitated by [Indonesia Stock Exchange](https://www.idx.co.id), stock brokers, and other [supporting institutions](https://www.ojk.go.id/id/kanal/pasar-modal/Pages/Lembaga-dan-Profesi-Penunjang.aspx).
 
 ## Objectives
 
