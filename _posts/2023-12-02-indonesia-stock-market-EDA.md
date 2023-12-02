@@ -8,7 +8,7 @@ tags: [finance, data visualizations]
 
 <script type="module" src="https://public.tableau.com/javascripts/api/tableau.embedding.3.latest.min.js"></script>
 
-*Please use a PC or use landscape mode to see this post for optimal experience. Thank you.*
+*Please use a PC or use landscape mode to see this post for optimal experience. For the version without interactive chart, you can see [this medium post](https://medium.com/@abangfarhan/exploratory-data-analysis-indonesias-stock-market-characteristics-and-trends-6ae1eb89864d). Thank you.*
 
 ***Disclaimer**: the information contained on this post and the resources available for download through this post is not intended as, and shall not be understood or construed as, financial advice. All views and ideas expressed on this post are my own and do not reflect the views of my employer.*
 
