@@ -7,8 +7,7 @@ title: About
 
 I earned my Bachelor of Economy (Sarjana Ekonomi) from the Faculty of Economics
 and Business in Universitas Indonesia in 2021, majoring in financial
-management. Now, I am currently employed as an Investment Analyst at BNI Asset
-Management.
+management. Now, I am currently working as an Investment Analyst.
 
 My links:
 
