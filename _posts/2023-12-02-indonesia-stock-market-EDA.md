@@ -296,7 +296,7 @@ Below is the chart for foreign mutual funds:
     </tableau-viz>
 </div>
 
-You can immediately see how different is the foreign mutual funds' sectoral allocations than local mutual funds. For instance, the financial sector get a much bigger allocation (>50%), and it has been increasing over time. And, as the financial sector got larger allocation, sectors like utilities, industrials, and real estate got smaller allocations.
+You can immediately see how different is the foreign mutual funds' sectoral allocations than local mutual funds'. For instance, the financial sector get a much bigger allocation (>50%), and it has been increasing over time. And, as the financial sector got larger allocation, sectors like utilities, industrials, and real estate got smaller allocations.
 
 Here are the sectoral allocations for local and foreign mutual funds as of October 2023:
 
