@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Simple Library SQL Database Design Project
+title: Simple E-Library SQL Database Design Project
 category: blog
 tags: [SQL]
 ---
