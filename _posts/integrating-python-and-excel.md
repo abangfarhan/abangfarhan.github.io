@@ -1,8 +1,8 @@
 ---
 layout: post
-title: My Approach in Integrating Excel and Python scripts
+title: My Approach in Integrating Excel and Python
 category: blog
-tags: [excel]
+tags: [excel, python]
 ---
 
 ## Introduction
@@ -10,12 +10,6 @@ tags: [excel]
 In this post I will share how I integrate Python scripts with Excel.
 
 ## The Problem
-
-Let's get one thing out of the way: Microsoft Excel is a very powerful tool, because:
-
-- It's very flexible
-- It provides instant feedback
-- It's pretty fast (unless you write your formulas inefficiently)
 
 I found that Excel formulas already satisfy >90% of my needs. However, on
 certain cases it's not enough, and this is where Python is needed. Cases such
@@ -49,8 +43,8 @@ The following is my solution to this problem:
 
 1. Have the Python script copy the desired data to clipboard, and have the VBA
    paste from clipboard to a certain location in the Excel file
-1. If some "input data" is required for the Python script, then it need to be
-   in the form of "command line arguments" (if possible)
+1. If some input data is required for the Python script, then it need to be
+   in the form of "command line arguments"
 
 ## Example Cases
 
@@ -94,17 +88,28 @@ Sub LoadData()
 End Sub
 ```
 
-Now, if the above macro is run, then the following data will be pasted into Excel:
+(Even better if, instead of referencing cell `A1` like that, you use named
+references; see [Use the Name Manager in
+Excel](https://support.microsoft.com/en-us/office/use-the-name-manager-in-excel-4d8c4c2b-9f7d-44e3-a3b4-9f61bd5c64e4)
+for more information.)
 
-XXX
+Now, if the above macro is executed, then the following data will be pasted into Excel:
+
+```
+| Name  | Age |
+--------------|
+| Joe   | 32  |
+| Mike  | 34  |
+```
 
 ## Disadvantage to This Approach
 
 The disadvantage of this approach is that you cannot paste multiple data; so,
 you must create a new script. This could be a problem from performance
 perspective: invoking a Python script takes a significant amount of time, more
-so if you load a large package like Pandas.
+so if you load a large package like Pandas. On some cases, you may want to just
+use the xlwings library.
 
 ## Conclusion
 
-XXX
+In this post I have shared how I integrate Excel and Python. I hope the method I have described could be useful for you. Have a nice day!
