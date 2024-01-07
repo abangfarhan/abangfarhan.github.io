@@ -8,12 +8,10 @@ layout: default
 
 <ul>
 {% for post in site.posts %}
-    {% if post.hidden != true %}
-        <li><span style="font-family: Consolas">{{ post.date | date: "%Y %b %d" }} &mdash;</span>
-            <a href="{{ post.url | relative_url }}">
-                {{ post.title }}
-            </a>
-        </li>
-    {% endif %}
+    <li><span style="font-family: Consolas">{{ post.date | date: "%Y %b %d" }} &mdash;</span>
+        <a href="{{ post.url | relative_url }}">
+            {{ post.title }}
+        </a>
+    </li>
 {% endfor %}
 </ul>
