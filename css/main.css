@@ -26,8 +26,12 @@ main {
 }
 
 a {
-    text-decoration: underline;
+    text-decoration: none;
     color: #0969da;
+}
+
+a:hover {
+    text-decoration: underline;
 }
 
 ul.navbar {
