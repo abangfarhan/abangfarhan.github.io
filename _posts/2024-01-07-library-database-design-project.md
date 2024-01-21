@@ -436,7 +436,7 @@ The query above shows the top five categories with the most number of books, alo
 
 ## Conclusion
 
-In this report, I have outlined a database design and implementation for an e-library application. The design I have provided should solve most of the application's requirements and needs. Moreover, the implementation for the database has also been demonstrated, along with the ERD, SQL syntax implementation, and a Python script to populate the database with dummy data. Lastly, I have also demonstrated some SQL queries that would be useful or interesting to answers.
+In this report, I have outlined a database design and implementation for an e-library application. The design I have provided should solve most of the application's requirements and needs. Moreover, the implementation for the database has also been demonstrated, along with the ERD, SQL syntax implementation, and a Python script to populate the database with dummy data. Lastly, I have also demonstrated some SQL queries that would be useful or interesting to answer.
 
 ## References
 
