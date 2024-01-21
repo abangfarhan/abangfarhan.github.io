@@ -192,7 +192,8 @@ When running the simulation, the following parameters are specified so the resul
 - Minimum and maximum book total quantity (the actual total quantity for each
   book is randomly generated using a uniform distribution)
 - Average arrival interval between each user (the actual arrival interval is
-  randomly generated using a [Poisson distribution](https://en.wikipedia.org/wiki/Poisson_distribution))
+  randomly generated following a [Poisson
+  process](https://en.wikipedia.org/wiki/Poisson_point_process), which is based on the [M/M/1 queue model](https://en.wikipedia.org/wiki/M/M/1_queue))
 - Random number seed
 
 The script for generating the data is too long to be included on this post, but it can be seen on the scripts `generate_data.py` and `run_simulation.py` on <https://github.com/abangfarhan/simple-library-database>.
