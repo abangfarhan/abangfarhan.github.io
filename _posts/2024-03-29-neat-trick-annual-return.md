@@ -47,10 +47,10 @@ In the past, I'd usually use `INDEX` & `MATCH` to retrieve the prices at the sta
 Recently, I found that this problem can be answered more conveniently if we exploit the relationship between simple return $R_t = P_t/P_{t-1}-1$ and log-return $r_t = \ln(1 + R_t)$. The return (or simple return) for the full period is simply:
 
 $$
-\begin{align}
+\begin{align*}
 R &= (1 + R_1)(1+R_2)(...)(1+R_T)-1 \\
 &= \prod_{t=1}^T (1+R_t) - 1
-\end{align}
+\end{align*}
 $$
 
 If we move the $-1$ to the left-hand side and take the logarithm on both sides we'll get:
