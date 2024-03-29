@@ -6,7 +6,7 @@ category: blog
 
 ## Introduction
 
-Recently, I joined a small competition held by [Pacmann](https://pacmann.io/) (an online course provider for data science courses). In it, the participants were tasked to transform some data to a certain specification. My submission was chosen as one of the top 3, and this post will briefly explain how I solved the problem. You can go to [the repo](https://github.com/abangfarhan/pacmann-wrangling-product-survey) to see the fulll submission; it also contains the CSV files that needed to be transformed.
+Recently, I joined a small competition held by [Pacmann](https://pacmann.io/) (an online course provider for data science courses). In it, the participants were tasked to transform some data to a certain specification. My submission was chosen as one of the top 3, and this post will briefly explain how I solved the problem. You can go to [the repo](https://github.com/abangfarhan/pacmann-wrangling-product-survey) to see the full submission; it also contains the CSV files that needed to be transformed.
 
 ## The Problem
 
