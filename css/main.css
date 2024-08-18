@@ -103,6 +103,12 @@ code pre {
     margin: 0;
 }
 
+pre {
+    padding: 8px 12px;
+    border: 1px solid lightgray;
+    border-radius: 3px;
+}
+
 /* syntax highlighter settings */
 td.rouge-gutter {
     padding: 0 0.7em;
