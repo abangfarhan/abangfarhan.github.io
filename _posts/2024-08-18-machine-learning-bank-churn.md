@@ -829,6 +829,8 @@ This is where the optimization comes in: the company should choose the threshold
 
 We can express the total cost $TC$ as an equation:
 
+<div class="long-math">
+
 $$
 \begin{aligned}
 \text{Total Cost} =& \text{Total Retention Cost} + \text{Total Acquisition Cost} \\
@@ -837,7 +839,11 @@ $$
 \end{aligned}
 $$
 
+</div>
+
 Using the classifier model, we are going to treat customers that are predicted positive (positive = churn in this case). Meanwhile, customers that were classified as negative but actually positive (i.e. "false negative") would need to be acquired. So, I'm going to replace "Treated Customers" with "Predicted Positive", and "Churning Customers" as "False Negative":
+
+<div class="long-math">
 
 $$
 \begin{aligned}
@@ -845,6 +851,8 @@ $$
 & + \text{False Negative} \times \text{Acquisition Cost per Customer}
 \end{aligned}
 $$
+
+</div>
 
 We can divide the above equation by the number of customers $N$ to get the average total cost per customer. To simplify the equation, I will define the following:
 
