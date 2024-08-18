@@ -5,9 +5,10 @@ title: About
 
 ## About me
 
-I earned my Bachelor of Economy (Sarjana Ekonomi) from the Faculty of Economics
-and Business in Universitas Indonesia in 2021, majoring in financial
-management. Now, I am currently working as an Investment Analyst.
+I earned my Bachelor of Economics (Sarjana Ekonomi) from the Faculty of
+Economics and Business in Universitas Indonesia in 2021, majoring in
+financial management. Now, I am currently working as an Investment
+Analyst.
 
 My links:
 
