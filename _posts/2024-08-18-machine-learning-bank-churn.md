@@ -335,6 +335,8 @@ print('Validation data shape:', df_valid.shape)
 print('Test data shape:', df_test.shape)
 ```
 
+Output:
+
     Full data shape: (10002, 11)
     Training data shape: (8001, 11)
     Validation data shape: (1000, 11)
@@ -363,12 +365,9 @@ What is the overall churn rate of this company?
 df_train['Exited'].mean()
 ```
 
-
-
+Output:
 
     0.20497437820272466
-
-
 
 As it turns out, there's about 20% of churning customers.
 
@@ -418,6 +417,8 @@ print(f'Churn rate for younger customers: {juniors_churn_rate:.2f}')
 print(f'Churn rate for older customers: {seniors_churn_rate:.2f}')
 ```
 
+Output:
+
     Average age is 38.99 years
     Churn rate for younger customers: 0.10
     Churn rate for older customers: 0.34
@@ -432,26 +433,19 @@ From the histogram, the variables `CreditScore`, `Age`, and `Balance` appear to 
 (df_train['Balance']==0).mean()
 ```
 
-
-
+Output:
 
     0.36082989626296713
 
-
-
 Pretty often, as it turns out; thirty six percent of the customers have zero balance. I expect these customers to churn more. Is it true? Let's find out:
-
 
 ```python
 df_train.query('Balance==0')['Exited'].mean()
 ```
 
-
-
+Output:
 
     0.14063041219258746
-
-
 
 I was wrong, apparently, as there's only about 14% customers with zero balance that are going to churn, which is lower than the overall churn rate of 20%.
 
@@ -615,13 +609,11 @@ At this point, we already have the preprocessed data that is ready to be used fo
 
 Let's ensure that there isn't any missing data:
 
-
 ```python
 X_train.isna().sum()
 ```
 
-
-
+Output:
 
     CreditScore           0
     Age                   0
@@ -639,8 +631,6 @@ X_train.isna().sum()
     NumOfProducts_3       0
     NumOfProducts_4       0
     dtype: int64
-
-
 
 As you can see, there is no missing data anymore. You can also see that there are now additional columns created by the one-hot encoder.
 
@@ -798,7 +788,7 @@ gs_summary.drop('best_model', axis=1)
 |LogisticRegression|0.821396|0.529412|0.821396|0.76|
 |DummyClassifier|0.5|0.0|0.5|0.815|
 
-Among all tested models, the neural network model results in the highest performance with AUC of 0.86. Therefore, from here onward I'm going to use it for further analysis.
+Among all tested models, the neural network model results in the highest performance with AUC of 0.861. Therefore, from here onward I'm going to use it for further analysis.
 
 
 ```python
@@ -817,12 +807,9 @@ y_test_pred_prob = best_model.predict_proba(X_test)[:, 1]
 roc_auc_score(y_test, y_test_pred_prob)
 ```
 
-
-
+Output:
 
     0.8596494363814018
-
-
 
 As you can see, the AUC score is 0.8596, which is very similar to the AUC score tested on the validation set.
 
@@ -964,7 +951,7 @@ Output:
 
 
 
-In this example, the optimum threshold is 0.21, resulting in average cost of \\$13 per customer. Compare it with the cost if we pay the full customer acquisition cost, which is in the right-most point in the chart above (when the threshold is equal to 1; this is also what we'd get if we use the dummy classifier, which will classify everyone as "not going to churn"):
+In this example, the optimum threshold is 0.21 (which is pretty far from the default threshold of 0.50), resulting in average cost of \\$13 per customer. Compare it with the cost if we pay the full customer acquisition cost, which is in the right-most point in the chart above (when the threshold is equal to 1; this is also what we'd get if we use the dummy classifier, which will classify everyone as "not going to churn"):
 
 
 ```python
