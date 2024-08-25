@@ -125,6 +125,8 @@ Checking for missing values:
 df.isnull().sum()
 ```
 
+Output:
+
     battery_power    0
     blue             0
     clock_speed      0
@@ -450,6 +452,8 @@ It is also worth noting that the misclassified cases are still only 1 notch away
 y_test_diff = (y_test_pred - y_test)
 y_test_diff.value_counts()
 ```
+
+Output:
 
     price_range
      0    579
