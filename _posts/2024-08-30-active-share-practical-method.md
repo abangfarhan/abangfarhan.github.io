@@ -8,9 +8,9 @@ tags: [finance, math]
 
 # Background
 
-Active Share is a metric to measure how different a fund is from its benchmark.
-Its value ranges from 0% (meaning the fund's underlying stocks and their
-weights are completely the same as the benchmark) to 100% (the fund's
+Active Share is a metric that measures how different a fund is from its
+benchmark. Its value ranges from 0% (meaning the fund's underlying stocks and
+their weights are completely the same as the benchmark) to 100% (the fund's
 underlying stocks and their weights are completely different as the benchmark).
 It is calculated with this formula:
 
