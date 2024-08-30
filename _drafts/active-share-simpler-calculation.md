@@ -1,6 +1,6 @@
 ---
 layout: post
-title: A Little Trick to Calculate Fund Active Share
+title: Practical Way to Calculate Fund Active Share
 category: blog
 math: true
 tags: [finance, math]
@@ -9,9 +9,10 @@ tags: [finance, math]
 # Background
 
 Active Share is a metric to measure how different a fund is from its benchmark.
-Its value ranges from 0% (the fund's underlying stocks and their weights are
-completely the same as the benchmark) to 100% (the fund's underlying stocks and
-their weights are completely different as the benchmark). It is calculated with this formula
+Its value ranges from 0% (meaning the fund's underlying stocks and their
+weights are completely the same as the benchmark) to 100% (the fund's
+underlying stocks and their weights are completely different as the benchmark).
+It is calculated with this formula:
 
 $$
 AS = 0.5 \times \sum_{i=1}^n | w_i - b_i |
@@ -21,9 +22,15 @@ where $w_i$ is the weight of stock $i$ in the portfolio, and $b_i$ is the
 weight of stock $i$ in the benchmark; $w_i - b_i$ is usually called "active
 weight". In other words, Active Share is equal to half of the sum of the fund's
 absolute active weights. For more on this you can read [this Investopedia
-article](https://www.investopedia.com/articles/mutualfund/07/active-share.asp).
+article](https://www.investopedia.com/articles/mutualfund/07/active-share.asp),
+or [this Alpha Architect
+article](https://alphaarchitect.com/2019/10/active-share-predictor-of-future-performance-or-urban-legend/)
+covering several researches on the relationship between Active Share and fund
+performance.
 
-In this post I will show you an easy way to calculate Active Share.
+In this post I will show you practical way to calculate Active Share. Note that
+I haven't found this method discussed anywhere else, but if you have please
+contact me so I can credit them.
 
 # The Long Way: Example
 
@@ -63,7 +70,7 @@ Then we can calculate the absolute active weight for each stock:
 
 The Active Share in this case is equal to $(20\% + 40\% + 20\% + 40\%) / 2 = 60\%$.
 
-# The Simpler Way: Example
+# The Practical Way: Example
 
 The previous calculation is complicated because it requires us to combine the
 two tables. The combined table need to include all stocks that are in the
