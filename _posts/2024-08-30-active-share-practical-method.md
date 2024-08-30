@@ -11,8 +11,8 @@ tags: [finance, math]
 Active Share is a metric that measures how different a fund is from its
 benchmark. Its value ranges from 0% (meaning the fund's underlying stocks and
 their weights are completely the same as the benchmark) to 100% (the fund's
-underlying stocks and their weights are completely different as the benchmark).
-It is calculated with this formula:
+underlying stocks and their weights are completely different from the
+benchmark). It is calculated with this formula:
 
 $$
 AS = 0.5 \times \sum_{i=1}^n | w_i - b_i |
