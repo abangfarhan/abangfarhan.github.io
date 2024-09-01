@@ -35,14 +35,14 @@ contact me so I can credit them.
 # The Long Way: Example
 
 Consider a portfolio consisting of two stocks, and its benchmark consisting of three stocks.
-Here is the weights for the portfolio:
+Here are the weights for the portfolio:
 
 |Stock|Portfolio Weight|
 |-|-|
 |A|60%|
 |B|40%|
 
-Here is the weights for the benchmark:
+Here are the weights for the benchmark:
 
 |Stock|Benchmark Weight|
 |-|-|
