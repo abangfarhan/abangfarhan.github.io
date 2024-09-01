@@ -12,7 +12,7 @@ ruby RUBY_VERSION
 gem "jekyll", "4.3.2"
 gem "kramdown", ">= 2.3.0"
 gem "kramdown-parser-gfm"
-gem "rexml", ">= 3.3.3"
+gem "rexml", ">= 3.3.6"
 
 # as suggested when running jekyll serve
 gem 'wdm', '>= 0.1.0' if Gem.win_platform?
