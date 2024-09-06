@@ -1,12 +1,10 @@
 ---
 layout: post
-title: Practical Way to Calculate Fund Active Share
+title: A Practical Way to Calculate Fund Active Share
 category: blog
 math: true
 tags: [finance, math]
 ---
-
-# Background
 
 Active Share is a metric that measures how different a fund is from its
 benchmark. Its value ranges from 0% (meaning the fund's underlying stocks and
@@ -28,7 +26,7 @@ article](https://alphaarchitect.com/2019/10/active-share-predictor-of-future-per
 covering several researches on the relationship between Active Share and fund
 performance.
 
-In this post I will show you practical way to calculate Active Share. Note that
+In this post I will show you a practical way to calculate Active Share. Note that
 I haven't found this method discussed anywhere else, but if you have please
 contact me so I can credit them.
 
@@ -42,7 +40,7 @@ Here are the weights for the portfolio:
 |A|60%|
 |B|40%|
 
-Here are the weights for the benchmark:
+And here are the weights for the benchmark:
 
 |Stock|Benchmark Weight|
 |-|-|
@@ -68,7 +66,7 @@ Then we can calculate the absolute active weight for each stock:
 |C|-|20%|20%|
 |D|-|40%|40%|
 
-The Active Share in this case is equal to $(20\% + 40\% + 20\% + 40\%) / 2 = 60\%$.
+The Active Share in this case is equal to (20% + 40% + 20% + 40%) / 2 = 60%.
 
 # The Practical Way: Example
 
@@ -109,7 +107,7 @@ Now we need to calculate these two values:
 - $a$ = the sum of absolute active weights in the table above: 20% + 40% = 60%.
 - $b$ = the sum of benchmark weights in the table above: 40% + 0% = 40%.
 
-The Active Share is equal to $(a + (1 - b)) / 2 = (60\% + (1 - 40\%)) / 2 = 60\%$, which is the same as before.
+The Active Share is equal to $(a + (1 - b)) / 2$ = (60% + (1 - 40%)) / 2 = 60%, which is the same as before.
 
 Why does this formula works? Consider that:
 
