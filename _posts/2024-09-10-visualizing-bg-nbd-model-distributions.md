@@ -36,7 +36,7 @@ In Desmos, the Gamma function is accessed via the factorial, where $\Gamma(r) = 
 
 # Beta Distribution for Heterogeneity of Drop-off Probability
 
-Every time a customer makes a transaction, there's a chance that they will stop making any transactions afterwards with probability $p$, which is called the drop-off probability. This probability is assumed to be independent across time and across customers, and the heterogeneity of $p$ among all customers is assumed to follow the Beta distribution, which is parameterized by the shape parameter $a$ and scale parameter $b$:
+Every time a customer makes a transaction, there's a chance that they will stop making any transactions afterwards with probability $p$, which is called the drop-off probability. This probability is assumed to be independent across time and across customers, and the heterogeneity of $p$ among all customers is assumed to follow the Beta distribution, which is parameterized by the shape parameters $a$ and $b$:
 
 $$
 f(p | a, b) = \frac{p^{a-1} (1-p)^{b-1}}{B(a, b)}, 0 \leq p \leq 1
@@ -46,3 +46,10 @@ Where $B(a,b)$ is the beta function, which can be expressed as $B(a, b) = \Gamma
 
 <iframe src="https://www.desmos.com/calculator/prh0yk8za4" frameBorder="0" width="100%" style="min-height:400px"></iframe>
 
+Notice the following properties of the Beta distribution:
+
+- If $a = b = 1$, the distribution is equal to the uniform distribution, where all drop-off probabilities are equally likely to occur.
+- If $a = b > 1$, the distribution is symmetric around 0.5.
+- If $a > b$, the distribution is skewed to the left, meaning customers with high drop-off probability are more likely to occur.
+- If $a < b$, the distribution is skewed to the right, meaning customers with low drop-off probability are more likely to occur.
+- As $a$ and $b$ increases, the distribution's spread becomes narrower.
