@@ -45,7 +45,7 @@ Next, we will examine the cross entropy loss function. First, keep in mind that 
 
 $$
 \begin{equation}
-L(\mathbf{p}) = - \log p_i
+L(\mathbf{p}) = - \sum_i \log p_i
   \text{ where }
   y_i = 1
 \label{eq:loss}
