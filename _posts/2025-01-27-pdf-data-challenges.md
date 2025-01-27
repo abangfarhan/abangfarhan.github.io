@@ -39,11 +39,11 @@ The libraries below can be used for PDFs that still have copy-able texts in them
         - This library can also find table cells (see [the documentation here](https://github.com/jsvine/pdfplumber?tab=readme-ov-file#table-extraction-methods))
         - This library is pretty slow and requires lots of coding to correctly read in the data.
 - **Paid solutions** (note that I haven’t tried any of these programs):
-    - PDF Tables: https://pdftables.com/
-        - For pricing see https://pdftables.com/pricing ($50 per 1000 pages for the lowest tier, which amounts to ~Rp800 per page)
+    - PDF Tables: <https://pdftables.com/>
+        - For pricing see <https://pdftables.com/pricing> ($50 per 1000 pages for the lowest tier, which amounts to ~Rp800 per page)
         - Has APIs that can be used from Python or other programming languages. 
         - Apparently, this has no free demo that you can try.
-    - Google’s Document AI: https://cloud.google.com/document-ai/ 
-        - For demo, go to https://cloud.google.com/document-ai/docs/try-docai
+    - Google’s Document AI: <https://cloud.google.com/document-ai/>
+        - For demo, go to <https://cloud.google.com/document-ai/docs/try-docai>
         - This also has APIs that can be used from Python etc.
 
