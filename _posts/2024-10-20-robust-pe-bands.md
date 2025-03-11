@@ -28,19 +28,19 @@ What I usually do to alleviate this problem are as follows:
 IQR standard deviation is calculated as follows[^1]:
 
 $$
-\sigma_{\text{IQR}}(x) = 1.349 \times \text{IQR}(x)
+\sigma_{\text{IQR}}(x) =  \text{IQR}(x) / 1.349
 $$
 
 where IQR is the interquartile range, which is calculated as the difference between the data's 75th and 25th percentile. Here's how to retrieve $\sigma_{\text{IQR}}$ using BQL:
 
 ```
-=BQL(<ticker>,"1.349 * (quantile(#pe,0.75) - quantile(#pe,0.25))","#pe=pe_ratio(dates=range(-5Y,0D))")
+=BQL(<ticker>,"(quantile(#pe,0.75) - quantile(#pe,0.25))/1.349","#pe=pe_ratio(dates=range(-5Y,0D))")
 ```
 
 Another measure that you can use is "MAD standard deviation"[^2] ("MAD" stands for median absolute deviation):
 
 $$
-\sigma_{\text{MAD}}(x) = 1.4826 \times \text{median}(|x - \text{median}(x)|)
+\sigma_{\text{MAD}}(x) = \text{median}(|x - \text{median}(x)|) / 1.4826 
 $$
 
 I found that stocks with periods of extremely high PE tend to have lower $\sigma_{\text{MAD}}$ compared to $\sigma_{\text{IQR}}$, which in my opinion is better.
@@ -48,7 +48,7 @@ I found that stocks with periods of extremely high PE tend to have lower $\sigma
 Using BQL in Excel, it is easy to retrieve $\sigma_{\text{MAD}}$:
 
 ```
-=BQL(<ticker>,"1.4826 * median(abs(#pe-median(#pe)))","#pe=pe_ratio(dates=range(-5Y,0D))")
+=BQL(<ticker>,"median(abs(#pe-median(#pe)))/1.4826 ","#pe=pe_ratio(dates=range(-5Y,0D))")
 ```
 
 Below I compare the PE bands created using conventional method vs the robust methods for BRIS stock:
