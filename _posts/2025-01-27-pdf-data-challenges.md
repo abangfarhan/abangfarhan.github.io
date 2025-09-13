@@ -5,6 +5,8 @@ category: blog
 tags: [programming]
 ---
 
+I'm writing this post as a kind of warning for anyone trying to parse PDF files, since I have done these kinds of projects several times in the past.
+
 ## The Challenges
 
 Correctly reading tabular data from PDFs is _extremely challenging_ for the following reasons:
