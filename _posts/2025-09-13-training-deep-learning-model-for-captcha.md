@@ -363,7 +363,7 @@ def solve_captcha(img: Image.Image) -> str:
     return captcha_pred
 ```
 
-I admit that the deploying process is a bit janky, however it works well enough for my purpose, so I didn't purse the matter further.
+I admit that the deploying process is a bit janky. However, it works well enough for my purpose, so I didn't purse the matter further.
 
 Anyway, I'm happy to report that the model has been deployed now and used everyday at my office with no problem.
 
