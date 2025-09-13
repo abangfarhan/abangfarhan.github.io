@@ -250,6 +250,70 @@ model = nn.Sequential(
 loss_fn = nn.CrossEntropyLoss()
 ```
 
+Meanwhile, below is the training function:
+
+```python
+import torch
+from torch import nn
+
+def train(
+    model: nn.Module,
+    X_train: torch.Tensor,
+    y_train: torch.Tensor,
+    X_valid: torch.Tensor,
+    y_valid: torch.Tensor,
+    loss_fn: nn.CrossEntropyLoss,
+    batch_size: int,
+    n_epochs: int,
+    learning_rate: float,
+    l1_lambda: float,
+    seed: int,
+) -> pd.DataFrame:
+    torch.manual_seed(seed)
+    optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate) # type: ignore
+    train_losses = []
+    valid_losses = []
+
+    for param in model.parameters():
+        param.requires_grad = True
+
+    for i in range(n_epochs):
+        ix = torch.randint(0, len(X_train), (batch_size, ))
+        X_train_batch = X_train[ix]
+        y_train_batch = y_train[ix]
+        logits = model(X_train_batch)
+        loss = loss_fn(logits, y_train_batch)
+
+        # add L1 penalty as regularization
+        for layer_name,layer_param in model.named_parameters():
+            if 'weight' in layer_name:
+                loss += l1_lambda * layer_param.abs().sum()
+
+        loss.backward()
+        optimizer.step()
+
+        # save train and validation loss
+        with torch.no_grad():
+            model.eval()
+            train_loss = loss_fn(model(X_train_batch), y_train_batch)
+            valid_loss = loss_fn(model(X_valid), y_valid)
+            train_losses.append(train_loss.item())
+            valid_losses.append(valid_loss.item())
+        model.train()
+
+        # print training progress
+        if i % 200 == 0 or i == n_epochs - 1:
+            print(f'epoch:{i:<8}train_loss:{train_loss.item():.4f}  valid_loss:{valid_loss.item():.4f}')
+
+    print('Training finished')
+    model.eval()
+    losses_df = pd.DataFrame({
+        'train': train_losses,
+        'valid': valid_losses
+    })
+    return losses_df
+```
+
 Below is the plot of the training and validation loss:
 
 ![Training and validation loss](/img/dnn-captcha/captcha-dl-06.png)
@@ -266,7 +330,7 @@ Apparently, the most confusing letter for the model is the letter "z", since it'
 
 ## Model accuracy
 
-I found that the best model that I trained achieved a 98.61% accuracy out-of-sample. However, we need to predict five characters at a time. So, what's the probability that we get all five characters correct? It's equal to 0.9861<sup>5</sup> = 0.9324, or only 93.24%, which I thought was not good enough.
+As I have stated, the best model achieved a 98.61% accuracy out-of-sample. However, we need to predict five characters at a time. So, what's the probability that we get all five characters correct? It's equal to 0.9861<sup>5</sup> = 0.9324, or only 93.24%, which I thought was not good enough.
 
 But then, I remembered that the website allows me to retry inputting the captcha several times without any penalty (when retrying, there's a new captcha image). So, what's the probability that we'll get the captcha right in *at most three attempts*? It's equal to (1-(1-0.9324)<sup>3</sup>) = 0.999691, or 99.97%, which is very good, so I decided to stop here.
 
@@ -274,7 +338,7 @@ But then, I remembered that the website allows me to retry inputting the captcha
 
 To deploy the model, I simply did the following:
 
-1. Save the model object into an ONNX file (see <https://docs.pytorch.org/docs/stable/onnx.html>); I named the file `model.onnx`
+1. Save the model object into an ONNX file (see [this documentation](https://docs.pytorch.org/docs/stable/onnx.html) to see how); I named the file `model.onnx`
 2. Manually copy the `model.onnx` file into the web scraper project, and use [onnxruntime](https://pypi.org/project/onnxruntime/) for running the model.
 
 Roughly speaking, the code for running the model looks something like this:
