@@ -9,7 +9,7 @@ layout: default
 <ul>
 {% for post in site.posts %}
     <li><span style="font-family: Consolas">{{ post.date | date: "%d %b %Y" }} &mdash;</span>
-        <a href="{{ post.url | relative_url }}">
+        <a class="post-link" href="{{ post.url | relative_url }}">
             {{ post.title }}
         </a>
     </li>
