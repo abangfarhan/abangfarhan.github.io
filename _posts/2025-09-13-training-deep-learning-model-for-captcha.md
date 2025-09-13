@@ -1,18 +1,18 @@
 ---
 layout: post
-title: Training Deep Learning Model for Solving Captchas
+title: Training a Deep Learning Model for Solving Captchas
 category: blog
 tags: [programming, machine learning]
 ---
 
-Hi all. Several months ago, I trained a deep neural network model for solving [captcha](https://en.wikipedia.org/wiki/CAPTCHA) from a website. Previously, I have created a python project for scraping some data from this website, but the user must manually input the captcha for logging into the website, which is irritating because the web-scraper script need to be run every day. With this model, the user doesn't have to do that anymore.
+Hi all. Several months ago, I trained a deep neural network (DNN) model for solving [captcha](https://en.wikipedia.org/wiki/CAPTCHA) from a certain website. Previously, I have created a python project for scraping some data from this website, but the user must manually input the captcha for logging into the website, which is irritating because the web-scraper script need to be run every day. With this model, the user doesn't have to do that anymore.
 
 The model pipeline is like this:
 
-- Open the login page and retrieve the captcha's image.
-- Preprocess the image by segmenting each character, pad each image to be square, and shrunk the size of the image.
-- For each character image, feed it into the neural net model, and get the answer. Concatenate the characters to get the captcha word
-- Send the login credentials along with the captcha answer
+1. Open the login page and retrieve the captcha image.
+1. Preprocess the image by segmenting each character, pad each image to be square, and shrunk the size of the image.
+1. For each character image, feed it into the neural net model, and get the answer. Concatenate the characters to get the captcha word
+1. Send the login credentials along with the captcha answer
 
 The hardest problem is to train the model so that it can accurately predict the characters.
 
@@ -22,15 +22,15 @@ To get a sense of the problem at hand, here are some examples of the captcha:
 
 I noticed the following properties of those captchas:
 
-- The letters are a little bit skewed
-- The letters are perfectly separable (i.e., no overlapping characters)
-- The letters are limited to this list: `2345678ABDEFHJMNQRTYabcdefhijkmnpqrstuvwxyz`
+- The characters are randomly skewed or rotated slightly
+- The characters are perfectly separable (i.e., no overlapping characters)
+- The characters are only limited to this list of 43 characters: `2345678ABDEFHJMNQRTYabcdefhijkmnpqrstuvwxyz`
 
-Now, why didn't I use [Tesseract](https://tesseract-ocr.github.io/)? Well, I tried it at first, but I found the result to be too inaccurate to be acceptable. In many cases, Tesseract couldn't even accurately predict how many characters there are in the image.
+Now, why didn't I use [Tesseract OCR](https://tesseract-ocr.github.io/) (a very good open-source OCR program)? Well, I tried it at first, but I found the result to be too inaccurate to be acceptable. In many cases, Tesseract couldn't even accurately predict how many characters there are in the image.
 
 ## Building the training data
 
-I wrote a little script for downloading the captcha image from the website, and used it to download 398 captcha images. Then, I manually renamed each file to be equal to the content of the image, like so:
+As many of you already know, training a machine learning model requires a lot of data, especially for a DNN model. So, I wrote a python script to download a bunch of captcha images from the website. In the end, I end up with 398 images, which I then proceed to **rename manually** so that each file name is equal to the content of the image, like so:
 
 ![Captcha image files](/img/dnn-captcha/captcha-dl-02.png)
 
@@ -38,9 +38,9 @@ The labeling process was a little bit tedious, but still manageable.
 
 ## Preprocessing the image
 
-To make the model training significantly easier, I need to separate each image into individual characters. In other words, instead of having to process a single picture containing five letters, I want to be able to process each letter individually.
+To make the model training significantly easier, I need to separate each image into individual characters. In other words, instead of having to process a single picture containing five letters, I want the model to only need to process each character individually.
 
-Separating each character is trivial. Since the characters have no overlap in the X-axis, then all I had to do was to project the pixels to the X-axis, and locate where there are changes in the pixel's color. For example, given this image ...
+Separating each character is trivial since the characters have no overlap in the X-axis. All I had to do was to project the pixels to the X-axis, and locate where there are changes in the pixel's color. For example, given this image ...
 
 ![Captcha image](/img/dnn-captcha/captcha-dl-03.png)
 
@@ -223,16 +223,27 @@ def augment_data(
     return X_out, y_out
 ```
 
+Equipped with the above function, I was able to increase the number of training data by **several thousands**. Incidentally, augmenting the data like this also serves to improve out-of-sample performance (i.e., reducing overfitting).
+
 ## Model architecture and training procedure
 
 I tried several models, but in the end I settled with the following procedures:
 
-- Preprocess the 2D image into a flat 1D array so that it can be processed by the neural network. Since this approach already worked very well, I didn't need to use more complex model like convolution (which could process the 2D image directly).
-- For the neural network:
+- First, preprocess the 2D image into a flat 1D array so that it can be processed by the neural network. Since this approach already worked very well, I didn't need to use more complex method like [convolution](https://en.wikipedia.org/wiki/Convolutional_neural_network) (which could process the 2D image directly).
+- Then, for the neural network:
 	- Use a single hidden layer with 200 neurons, and use tanh function for the non-linearity
-	- Apply batch normalization before feeding into the tanh function (very useful for XXX)
+	- Apply batch normalization before feeding into the tanh functio 
 	- Use dropout layer and L1 penalty as regularization (useful to get better out-of-sample performance)
 	- Use batch size=128 and 25k number of epochs
+
+How many parameters does this model have? Let's calculate:
+
+- The input image dimension is 25 x 25 pixels, which means there are 625 numbers as input
+- The hidden layer has 200 neurons
+- The output layer has 43 neurons (since there are 43 possible characters)
+- Now we only need to multiply all the above numbers: 625 x 200 x 43 = 5,375,000
+
+As you can see, this model have more than 5 million parameters, which means that without proper regularization or with very limited data, the model would likely overfit the training samples.
 
 Here's the code for setting up the model and loss function:
 
@@ -318,7 +329,7 @@ Below is the plot of the training and validation loss:
 
 ![Training and validation loss](/img/dnn-captcha/captcha-dl-06.png)
 
-As you can see, the loss gradually decline overtime, which is a good sign that the model is capable of learning the patterns.
+As you can see, the loss gradually declines overtime, which is a good sign that the model is capable of learning the patterns in the image.
 
 In the end, the best model achieved 98.61% accuracy out-of-sample (on the validation set). Below I have plotted the characters that are mislabeled by the model:
 
@@ -332,7 +343,9 @@ Apparently, the most confusing letter for the model is the letter "z", since it'
 
 As I have stated, the best model achieved a 98.61% accuracy out-of-sample. However, we need to predict five characters at a time. So, what's the probability that we get all five characters correct? It's equal to 0.9861<sup>5</sup> = 0.9324, or only 93.24%, which I thought was not good enough.
 
-But then, I remembered that the website allows me to retry inputting the captcha several times without any penalty (when retrying, there's a new captcha image). So, what's the probability that we'll get the captcha right in *at most three attempts*? It's equal to (1-(1-0.9324)<sup>3</sup>) = 0.999691, or 99.97%, which is very good, so I decided to stop here.
+But then, I remembered that the website allows me to retry inputting the captcha several times without any penalty (when retrying, there's simply a new captcha image). So, what's the probability that we'll get the captcha right in *at most three attempts*? It's equal to (1-(1-0.9324)<sup>3</sup>) = 0.999691, or 99.97%, which is very good, so I decided to stop here.
+
+In fact, when the model was deployed to predict new data, it only need two attempts at most, but mostly succeed at first attempt.
 
 ## Deploying the model
 
@@ -365,7 +378,7 @@ def solve_captcha(img: Image.Image) -> str:
 
 I admit that the deploying process is a bit janky. However, it works well enough for my purpose, so I didn't purse the matter further.
 
-Anyway, I'm happy to report that the model has been deployed now and used everyday at my office with no problem.
+Anyway, I'm happy to report that the model has been deployed now and used everyday at my office with very good accuracy.
 
 ## Closing remarks
 
