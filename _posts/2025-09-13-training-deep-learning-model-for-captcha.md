@@ -30,7 +30,7 @@ Now, why didn't I use [Tesseract OCR](https://tesseract-ocr.github.io/) (a very 
 
 ## Building the training data
 
-As many of you already know, training a machine learning model requires a lot of data, especially for a DNN model. So, I wrote a python script to download a bunch of captcha images from the website. In the end, I end up with 398 images, which I then proceed to **rename manually** so that each file name is equal to the content of the image, like so:
+As many of you already know, training a machine learning model requires a lot of data, especially for a DNN model. So, I wrote a python script to download a bunch of captcha images from the website. In the end, I ended up with 398 images, which I then proceeded to **rename manually** so that each file name is equal to the content of the image, like so:
 
 ![Captcha image files](/img/dnn-captcha/captcha-dl-02.png)
 
@@ -232,9 +232,13 @@ I tried several models, but in the end I settled with the following procedures:
 - First, preprocess the 2D image into a flat 1D array so that it can be processed by the neural network. Since this approach already worked very well, I didn't need to use more complex method like [convolution](https://en.wikipedia.org/wiki/Convolutional_neural_network) (which could process the 2D image directly).
 - Then, for the neural network:
 	- Use a single hidden layer with 200 neurons, and use tanh function for the non-linearity
-	- Apply batch normalization before feeding into the tanh functio 
-	- Use dropout layer and L1 penalty as regularization (useful to get better out-of-sample performance)
+	- Apply [batch normalization](https://en.wikipedia.org/wiki/Batch_normalization) before feeding into the tanh function
+	- Use [dropout](https://en.wikipedia.org/wiki/Dilution_(neural_networks)) layer and [L1 penalty](https://en.wikipedia.org/wiki/Regularization_(mathematics)#L1_and_L2_Regularization) as regularization (useful to get better out-of-sample performance)
 	- Use batch size=128 and 25k number of epochs
+
+Below is the model architecture:
+
+![Model architecture](/img/dnn-captcha/captcha-dl-08.png)
 
 How many parameters does this model have? Let's calculate:
 
@@ -325,13 +329,13 @@ def train(
     return losses_df
 ```
 
-Below is the plot of the training and validation loss:
+When the training was finished, I plot the time series of the training and validation loss:
 
 ![Training and validation loss](/img/dnn-captcha/captcha-dl-06.png)
 
 As you can see, the loss gradually declines overtime, which is a good sign that the model is capable of learning the patterns in the image.
 
-In the end, the best model achieved 98.61% accuracy out-of-sample (on the validation set). Below I have plotted the characters that are mislabeled by the model:
+In the end, the best model achieved 98.61% accuracy out-of-sample (on the validation set). Below, I have plotted the characters that are mislabeled by the model:
 
 ![Mislabeled characters](/img/dnn-captcha/captcha-dl-07.png)
 
